@@ -11,7 +11,7 @@ public class GameSelection
         int userChoice = console.nextInt();
         Blackjack newGame = new Blackjack();
         HighLowGame startGame = new HighLowGame();
-
+        
         if (userChoice == 1)
         {
             System.out.println("You have selected HighLow. Starting game...");
@@ -29,7 +29,7 @@ public class GameSelection
             System.out.println("Invalid option. You only had two choices!");
         }
 
-        
-    }
+        console.close();
+    } // end main()
 
 } // end class

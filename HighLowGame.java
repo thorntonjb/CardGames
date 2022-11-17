@@ -15,9 +15,10 @@ public class HighLowGame
             Card firstCard = aDeck.drawCard();
             System.out.println("The first card is " + firstCard.declareCard());
             System.out.println("Will the next card be higher or lower?");
-            System.out.print("Enter 1 if lower, 2 if higher: ");
+            System.out.print("Enter 1 if higher, 2 if lower: ");
 
             int userChoice = console.nextInt();
+            console.nextLine();
 
             Card secondCard = aDeck.drawCard();
             System.out.println("The next card is " + secondCard.declareCard());
@@ -27,7 +28,7 @@ public class HighLowGame
             {
                 System.out.println("The next card is of the same value. You tied!");
             }
-            else if ((isHigher && userChoice == 2) || (!isHigher && userChoice == 1))
+            else if ((isHigher && userChoice == 1) || (!isHigher && userChoice == 2))
             {
                 System.out.println("You chose correctly! You win!");
             }
@@ -37,17 +38,21 @@ public class HighLowGame
             } // end if
 
             
-            System.out.print("\nWould you like to play again? (1 for yes / 2 for no): ");
-            int playAgain = console.nextInt();
+            System.out.print("\nWould you like to play again? (y/n): ");
+            String playAgain = console.nextLine();
 
-            if (playAgain == 2)
+            if (playAgain.equalsIgnoreCase("n"))
             {
                 isPlayingAgain = "n";
             }
-            else
+            else if (playAgain.equalsIgnoreCase("y"))
             {
                 isPlayingAgain = "y";
-            } // end if
+            }
+            else // (!playAgain.equalsIgnoreCase("n") || !playAgain.equalsIgnoreCase("y"))
+            {
+                System.out.println("Invalid option. Please choose again.");
+            }
 
             
         } // end while loop
