@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HighLowGame 
 {
-    public static void main(String[] args)
+    public void playGame()
     {
         String isPlayingAgain = "y";
         Scanner console = new Scanner(System.in);

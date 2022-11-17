@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Blackjack 
 {
-    public static void main(String[] args) throws InterruptedException
+    public void playGame() throws InterruptedException
     {
         String isPlayingAgain = "y";
         Deck aDeck = new Deck();
